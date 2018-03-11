@@ -1,0 +1,40 @@
+﻿@model BookStore.Models.CRUDbtn
+@using BookStore.Models
+
+<td style="width:400px;">
+    <div class="btn-group" role="group">
+        @Html.Partial("_CRUDbtn",
+            new CRUDbtn
+            {
+                ButtonType = "btn-primary",
+                Action = "Edit",
+                Glyph = "pencil",
+                GenreId = Model.GenreId,
+                BookId = Model.BookId,
+                CustomerId = Model.CustomerId,
+                MembershipTypeId = Model.MembershipTypeId
+            })
+            @Html.Partial("_CRUDbtn",
+            new CRUDbtn
+            {
+                ButtonType = "btn-success",
+                Action = "Details",
+                Glyph = "list",
+                GenreId = Model.GenreId,
+                BookId = Model.BookId,
+                CustomerId = Model.CustomerId,
+                MembershipTypeId = Model.MembershipTypeId
+            })
+            @Html.Partial("_CRUDbtn",
+            new CRUDbtn
+            {
+                ButtonType = "btn-danger",
+                Action = "Delete",
+                Glyph = "trash",
+                GenreId = Model.GenreId,
+                BookId = Model.BookId,
+                CustomerId = Model.CustomerId,
+                MembershipTypeId = Model.MembershipTypeId
+            })
+    </div>
+</td>

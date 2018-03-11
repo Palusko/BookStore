@@ -1,13 +1,33 @@
-﻿@model IEnumerable<BookStore.Models.Genre> 
+﻿@model IEnumerable<BookStore.Models.Genre>
+@using BookStore.Models
+
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Index";
 }
 
 <h2>Genres</h2>
 
-<a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Create")">
-    <span class="glyphicon glyphicon-plus"></span>
-    <span>Create New</span>
-</a>
+<table class="table table-condensed table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.Name)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var genre in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => genre.Name)
+            </td>
+            <td>
+                @Html.Partial("_TableBtn", new CRUDbtn { GenreId = genre.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.Partial("_CreateNewBtn", "Genre")
 
 

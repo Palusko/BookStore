@@ -1,0 +1,28 @@
+﻿@model BookStore.Models.Genre
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Genre Details: @Model.Name</h2>
+<hr />
+
+<fieldset disabled>
+    <div class="row" style="padding-bottom:5px; padding-top:5px;">
+        <div class="control-label col-md-1" style="margin-top:7px;">
+            @Html.LabelFor(m => m.Name)
+        </div>        
+        <div class="col-md-11">
+            @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+</fieldset>
+
+<br />
+
+<p>
+    @Html.Partial("_BackToListBtn")
+    @Html.Partial("_EditBtn", Model.Id)
+</p>
+
+
+
