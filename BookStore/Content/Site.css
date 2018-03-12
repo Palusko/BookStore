@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.table-header {
+    background-color: #cee7ff;
+    color: #03417D;
+}
+
+.form-border {
+    border: 1px solid #bbb9b9;
+    border-radius: 5px;
+    padding: 20px 0 10px 10px;
+}

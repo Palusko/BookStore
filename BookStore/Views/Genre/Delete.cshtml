@@ -11,23 +11,24 @@
     @Html.AntiForgeryToken()
     <h3>Are you sure you want to delete @Model.Name Genre?</h3>
     <hr />
-    <fieldset disabled>
-        <div class="row" style="padding-bottom:5px; padding-top:5px;">
-            <div class="control-label col-md-1" style="margin-top:7px;">
-                @Html.LabelFor(m => m.Name)
+    <div class="form-border">
+        <fieldset disabled>
+            <div class="row" style="padding-bottom:5px; padding-top:5px;">
+                <div class="control-label col-md-1" style="margin-top:7px;">
+                    @Html.LabelFor(m => m.Name)
+                </div>
+                <div class="col-md-11">
+                    @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
             </div>
-            <div class="col-md-11">
-                @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>
-    </fieldset>
-
+        </fieldset>
+    </div>
     <br />
 
-    <p>
+    <div>
         @Html.Partial("_BackToListBtn")
         <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
-    </p>
+    </div>
 }
 
 
